@@ -25,7 +25,7 @@
         "@type": "Country",
         "name": "España"
       },
-      "knowsAbout": ["Instalaciones Eléctricas", "Telecomunicaciones", "Reparación de Averías", "Mantenimiento Eléctrico"]
+      "knowsAbout": ["Instalaciones Eléctricas", "Telecomunicaciones", "Reparación de Averías", "Boletines Eléctricos", "Domótica", "Colocación de Luminaria"]
     }
     </script>
     
@@ -281,6 +281,34 @@
             border: 1px solid rgba(249, 182, 33, 0.3);
             text-transform: uppercase;
             letter-spacing: 1px;
+        }
+
+        .hero-separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem auto 1.5rem;
+            max-width: 300px;
+        }
+
+        .hero-separator::before,
+        .hero-separator::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+        }
+
+        .hero-separator i {
+            color: var(--color-accent);
+            font-size: 1.2rem;
+ 
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
         }
 
         .hero p {
@@ -588,7 +616,7 @@
 
         @media (min-width: 1024px) {
             .services-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
             .footer-grid {
                 grid-template-columns: 2fr 1fr 1.5fr;
@@ -639,13 +667,14 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="container hero-content">
-                <div class="badge">Carlos García - Electricista Autónomo</div>
-                <h1>Asistencia Eléctrica a Domicilio</h1>
-                <p>Soluciones rápidas y eficaces en instalaciones eléctricas y de telecomunicaciones. Atención ágil ante cualquier tipo de avería en tu vivienda o negocio.</p>
+                <h1>Carlos García </h1>
+                <div class="hero-separator"><i class="fa-solid fa-bolt"></i></div>
+                <p>Soluciones rápidas, seguras y sin complicaciones</p>
                 
                 <div class="hero-tags">
-                    <div class="tag"><i class="fa-solid fa-bolt"></i> Averías y Urgencias</div>
-                    <div class="tag"><i class="fa-solid fa-house-signal"></i> Telecomunicaciones</div>
+                    <div class="tag"><i class="fa-solid fa-bolt"></i> Averías Eléctricas</div>
+                    <div class="tag"><i class="fa-solid fa-file-circle-check"></i> Boletines Eléctricos</div>
+                    <div class="tag"><i class="fa-solid fa-house-signal"></i> Domótica</div>
                     <div class="tag"><i class="fa-solid fa-shield-halved"></i> Garantía Profesional</div>
                 </div>
 
@@ -672,7 +701,31 @@
                             <i class="fa-solid fa-plug-circle-bolt"></i>
                         </div>
                         <h3>Instalaciones Eléctricas</h3>
-                        <p>Realizamos cableados, montajes de cuadros eléctricos y altas de luz adaptadas a la normativa vigente con total seguridad.</p>
+                        <p>Cableados, montajes de cuadros eléctricos y altas de luz adaptadas a la normativa vigente con total seguridad.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <h3>Averías Eléctricas</h3>
+                        <p>Asistencia técnica para cortes de suministro, cortocircuitos, fallos en diferenciales y cualquier problema eléctrico.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h3>Colocación de Luminaria</h3>
+                        <p>Instalación y sustitución de todo tipo de luminarias interiores y exteriores, incluyendo sistemas LED de bajo consumo.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-file-circle-check"></i>
+                        </div>
+                        <h3>Boletines Eléctricos</h3>
+                        <p>Tramitación y emisión de certificados de instalación eléctrica (CIE/boletines) necesarios para altas y reformas.</p>
                     </article>
 
                     <article class="service-card">
@@ -680,23 +733,15 @@
                             <i class="fa-solid fa-wifi"></i>
                         </div>
                         <h3>Telecomunicaciones</h3>
-                        <p>Instalación de redes de datos, cableado de red, tomas de internet y sistemas de telefonía para hogares y oficinas.</p>
+                        <p>Soluciones integrales en infraestructura de telecomunicaciones para viviendas y locales comerciales.</p>
                     </article>
 
                     <article class="service-card">
                         <div class="icon-wrapper">
-                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <i class="fa-solid fa-house-signal"></i>
                         </div>
-                        <h3>Reparación de Averías</h3>
-                        <p>Asistencia técnica para cortes de suministro, derivaciones, cortocircuitos y fallos en diferenciales o enchufes.</p>
-                    </article>
-
-                    <article class="service-card">
-                        <div class="icon-wrapper">
-                            <i class="fa-solid fa-lightbulb"></i>
-                        </div>
-                        <h3>Iluminación LED</h3>
-                        <p>Sustitución y asesoramiento en sistemas de iluminación eficiente para reducir drásticamente el consumo en tu factura.</p>
+                        <h3>Domótica</h3>
+                        <p>Automatización del hogar: control de iluminación, persianas, climatización y sistemas inteligentes para mayor confort.</p>
                     </article>
                 </div>
             </div>
@@ -782,17 +827,18 @@
                             <span>ELECTRICIDAD</span>
                         </div>
                     </div>
-                    <p>Carlos García, tu electricista de confianza. Especialistas en reparaciones del hogar, montajes eléctricos y redes de telecomunicaciones. Soluciones seguras y duraderas.</p>
+                    <p>Carlos García, tu electricista de confianza. Electricidad en general: instalaciones, averías, luminaria, boletines eléctricos, telecomunicaciones y domótica.</p>
                 </div>
 
                 <div class="footer-links-col">
                     <h3 class="footer-title">Nuestros Servicios</h3>
                     <ul class="footer-links">
                         <li><i class="fa-solid fa-chevron-right"></i> Instalaciones Eléctricas</li>
-                        <li><i class="fa-solid fa-chevron-right"></i> Redes y Telecomunicaciones</li>
-                        <li><i class="fa-solid fa-chevron-right"></i> Diagnóstico de Averías</li>
-                        <li><i class="fa-solid fa-chevron-right"></i> Actualización de Cuadros</li>
-                        <li><i class="fa-solid fa-chevron-right"></i> Iluminación Interior/Exterior</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Averías Eléctricas</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Colocación de Luminaria</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Boletines Eléctricos</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Telecomunicaciones</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Domótica</li>
                     </ul>
                 </div>
 
@@ -825,7 +871,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 CGP Electricidad. Todos los derechos reservados. | Diseño enfocado en soluciones eléctricas.</p>
+                <p>&copy; 2026 CGP Electricidad. Todos los derechos reservados. | Diseñado por <a href="https://albertomarindev.vercel.app" target="_blank" rel="noopener" style="color: var(--color-accent); font-weight: 600;">albertomarindev</a></p>
             </div>
         </div>
     </footer>
