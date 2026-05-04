@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricista Urgente y a Domicilio | Carlos García - CGP Electricidad</title>
+    <meta name="description" content="¿Necesitas un electricista de confianza? CGP Electricidad ofrece servicios de instalación, reparación de averías y telecomunicaciones. Atención rápida. ¡Llama!">
+    <meta name="keywords" content="electricista urgente, electricista a domicilio, electricista 24 horas, instalaciones eléctricas, telecomunicaciones, averías eléctricas, reparaciones eléctricas">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Schema.org Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Electrician",
+      "name": "CGP Electricidad - Carlos García",
+      "telephone": "+34675440505",
+      "description": "Servicios de electricista urgente, a domicilio, instalaciones eléctricas y telecomunicaciones.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "España"
+      },
+      "knowsAbout": ["Instalaciones Eléctricas", "Telecomunicaciones", "Reparación de Averías", "Mantenimiento Eléctrico"]
+    }
+    </script>
+    
+    <style>
+        /* === Variables & Resets === */
+        :root {
+            --color-primary: #0a1424; /* Azul marino profundo */
+            --color-primary-light: #162640;
+            --color-accent: #f9b621; /* Amarillo/Dorado */
+            --color-accent-hover: #e0a31a;
+            --color-text: #334155;
+            --color-text-light: #f8fafc;
+            --color-bg-light: #f1f5f9;
+            --color-white: #ffffff;
+            --transition: all 0.3s ease-in-out;
+            --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 25px rgba(0,0,0,0.1);
+            --shadow-accent: 0 4px 15px rgba(249, 182, 33, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+            color: var(--color-text);
+            line-height: 1.6;
+            background-color: var(--color-white);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* === Typography === */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--color-text-light);
+            margin-bottom: 1.25rem;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            color: var(--color-primary);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--color-accent);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            color: var(--color-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        /* === Buttons === */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .btn-accent {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            box-shadow: var(--shadow-accent);
+        }
+
+        .btn-accent:hover {
+            background-color: var(--color-accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(249, 182, 33, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+        }
+
+        /* === Header & Nav === */
+        header {
+            background-color: var(--color-primary);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--color-text-light);
+            letter-spacing: 2px;
+        }
+
+        .logo-svg {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+        }
+
+        .logo-text span {
+            color: var(--color-accent);
+            display: block;
+            font-size: 0.85rem;
+            letter-spacing: 4.5px;
+            margin-top: -4px;
+            font-weight: 700;
+        }
+
+        .contact-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .phone-display {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-text-light);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .phone-display i {
+            color: var(--color-accent);
+        }
+
+        .mobile-btn {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-accent);
+        }
+
+        .desktop-btn {
+            display: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+        }
+
+        /* === Hero Section === */
+        .hero {
+            padding: 180px 0 120px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, #0d1e36 100%);
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '\f0e7'; /* Lightning icon watermark */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 35rem;
+            color: rgba(255, 255, 255, 0.02);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(249, 182, 33, 0.1);
+            color: var(--color-accent);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(249, 182, 33, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            margin-bottom: 2.5rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .tag {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-white);
+            font-weight: 500;
+        }
+
+        .tag i {
+            color: var(--color-accent);
+        }
+
+        /* Diagonal divider */
+        .shape-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .shape-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 70px;
+        }
+
+        .shape-divider .shape-fill {
+            fill: var(--color-white);
+        }
+
+        /* === Services Section === */
+        .services {
+            padding: 6rem 0;
+            background-color: var(--color-white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--color-bg-light);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(to bottom, var(--color-primary), var(--color-primary-light));
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .service-card:hover::after {
+            height: 100%;
+        }
+
+        .service-card:hover h3,
+        .service-card:hover p {
+            color: var(--color-white);
+        }
+
+        .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background-color: var(--color-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .service-card:hover .icon-wrapper {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+        }
+
+        /* === Why Choose Us Section === */
+        .why-us {
+            padding: 6rem 0;
+            background-color: var(--color-bg-light);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .why-card {
+            display: flex;
+            gap: 1.5rem;
+            background-color: var(--color-white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border-left: 5px solid var(--color-accent);
+            transition: var(--transition);
+        }
+
+        .why-card:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .why-icon {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            flex-shrink: 0;
+        }
+
+        .why-text p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        /* === CTA Banner === */
+        .cta-banner {
+            padding: 5rem 0;
+            background-color: var(--color-primary);
+            background-image: radial-gradient(circle at right center, rgba(249, 182, 33, 0.1) 0%, transparent 50%);
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .cta-banner h2 {
+            color: var(--color-white);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-banner h2::after {
+            display: none;
+        }
+
+        .cta-banner p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            color: #cbd5e1;
+        }
+
+        .cta-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* === Footer === */
+        footer {
+            background-color: #050a12;
+            color: #94a3b8;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-about p {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-title {
+            color: var(--color-white);
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-links i {
+            color: var(--color-accent);
+            font-size: 0.8rem;
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-contact i {
+            color: var(--color-accent);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.9rem;
+        }
+
+        /* === Floating Buttons === */
+        .floating-action {
+            position: fixed;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: var(--color-white);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .floating-action:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .float-wa {
+            bottom: 20px;
+            background-color: #25d366;
+        }
+
+        .float-phone {
+            bottom: 90px;
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+        }
+
+        /* === Media Queries === */
+        @media (min-width: 768px) {
+            .phone-display {
+                display: flex;
+            }
+            .mobile-btn {
+                display: none;
+            }
+            .desktop-btn {
+                display: inline-flex;
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 2fr 1fr 1.5fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo" aria-label="Inicio">
+                <svg class="logo-svg" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <!-- Arco exterior de la bombilla -->
+                    <path d="M25,95 C5,70 10,35 35,18 C50,8 70,5 85,15 C105,28 115,55 100,82" stroke="#f9b621" stroke-width="4" fill="none" stroke-linecap="round"/>
+                    <!-- Cuerpo de la bombilla -->
+                    <path d="M40,78 C28,62 30,40 45,28 C55,20 68,19 78,27 C90,37 94,58 83,75 L78,82 L45,82 Z" stroke="#f9b621" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
+                    <!-- Base/casquillo de la bombilla -->
+                    <rect x="44" y="82" width="35" height="6" rx="2" stroke="#f9b621" stroke-width="3" fill="none"/>
+                    <rect x="46" y="90" width="31" height="5" rx="2" stroke="#f9b621" stroke-width="2.5" fill="none"/>
+                    <path d="M50,95 L54,102 L69,102 L73,95" stroke="#f9b621" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+                    <!-- Rayo central -->
+                    <polygon points="67,30 55,56 65,56 53,80 72,50 62,50 74,30" fill="#f9b621"/>
+                </svg>
+                <div class="logo-text">
+                    CGP
+                    <span>ELECTRICIDAD</span>
+                </div>
+            </a>
+            
+            <nav class="contact-nav">
+                <div class="phone-display">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span>675 440 505</span>
+                </div>
+                <a href="tel:+34675440505" class="btn btn-accent desktop-btn">
+                    Llamar Ahora
+                </a>
+                <a href="tel:+34675440505" class="mobile-btn" aria-label="Llamar a Carlos García">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="badge">Carlos García - Electricista Autónomo</div>
+                <h1>Asistencia Eléctrica a Domicilio</h1>
+                <p>Soluciones rápidas y eficaces en instalaciones eléctricas y de telecomunicaciones. Atención ágil ante cualquier tipo de avería en tu vivienda o negocio.</p>
+                
+                <div class="hero-tags">
+                    <div class="tag"><i class="fa-solid fa-bolt"></i> Averías y Urgencias</div>
+                    <div class="tag"><i class="fa-solid fa-house-signal"></i> Telecomunicaciones</div>
+                    <div class="tag"><i class="fa-solid fa-shield-halved"></i> Garantía Profesional</div>
+                </div>
+
+                <a href="tel:+34675440505" class="btn btn-accent">
+                    <i class="fa-solid fa-phone-volume"></i> Llamar al 675 440 505
+                </a>
+            </div>
+            
+            <!-- SVG Divider -->
+            <div class="shape-divider">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="servicios">
+            <div class="container">
+                <h2>Servicios Especializados</h2>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-plug-circle-bolt"></i>
+                        </div>
+                        <h3>Instalaciones Eléctricas</h3>
+                        <p>Realizamos cableados, montajes de cuadros eléctricos y altas de luz adaptadas a la normativa vigente con total seguridad.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-wifi"></i>
+                        </div>
+                        <h3>Telecomunicaciones</h3>
+                        <p>Instalación de redes de datos, cableado de red, tomas de internet y sistemas de telefonía para hogares y oficinas.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <h3>Reparación de Averías</h3>
+                        <p>Asistencia técnica para cortes de suministro, derivaciones, cortocircuitos y fallos en diferenciales o enchufes.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h3>Iluminación LED</h3>
+                        <p>Sustitución y asesoramiento en sistemas de iluminación eficiente para reducir drásticamente el consumo en tu factura.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why-us" id="ventajas">
+            <div class="container">
+                <h2>¿Por qué elegir CGP Electricidad?</h2>
+                <div class="why-grid">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fa-solid fa-stopwatch"></i></div>
+                        <div class="why-text">
+                            <h3>Disponibilidad y Rapidez</h3>
+                            <p>Sabemos que la falta de luz es un problema grave. Nos desplazamos a tu ubicación con la máxima agilidad para restaurar tu suministro.</p>
+                        </div>
+                    </div>
+
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fa-solid fa-user-tie"></i></div>
+                        <div class="why-text">
+                            <h3>Trato Directo, Sin Intermediarios</h3>
+                            <p>Hablarás directamente con Carlos García. Esto garantiza una comunicación clara, honesta y sin sobrecostes ocultos.</p>
+                        </div>
+                    </div>
+
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fa-solid fa-certificate"></i></div>
+                        <div class="why-text">
+                            <h3>Experiencia Comprobada</h3>
+                            <p>Años de dedicación exclusiva al sector eléctrico nos permiten diagnosticar y resolver averías complejas en tiempo récord.</p>
+                        </div>
+                    </div>
+
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                        <div class="why-text">
+                            <h3>Trabajo Garantizado</h3>
+                            <p>Utilizamos materiales de primeras marcas y aplicamos los protocolos más estrictos de seguridad en cada intervención que realizamos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-banner">
+            <div class="container">
+                <h2>¿Un problema eléctrico requiere atención inmediata?</h2>
+                <p>No asumas riesgos intentando repararlo tú mismo. Un electricista profesional está listo para ayudarte en este momento.</p>
+                <div class="cta-actions">
+                    <a href="tel:+34675440505" class="btn btn-accent">
+                        <i class="fa-solid fa-phone"></i> Llama al 675 440 505
+                    </a>
+                    <a href="https://wa.me/34675440505" target="_blank" rel="noopener" class="btn btn-outline">
+                        <i class="fa-brands fa-whatsapp"></i> Escribir por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo">
+                        <svg class="logo-svg" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <!-- Arco exterior de la bombilla -->
+                            <path d="M25,95 C5,70 10,35 35,18 C50,8 70,5 85,15 C105,28 115,55 100,82" stroke="#f9b621" stroke-width="4" fill="none" stroke-linecap="round"/>
+                            <!-- Cuerpo de la bombilla -->
+                            <path d="M40,78 C28,62 30,40 45,28 C55,20 68,19 78,27 C90,37 94,58 83,75 L78,82 L45,82 Z" stroke="#f9b621" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
+                            <!-- Base/casquillo de la bombilla -->
+                            <rect x="44" y="82" width="35" height="6" rx="2" stroke="#f9b621" stroke-width="3" fill="none"/>
+                            <rect x="46" y="90" width="31" height="5" rx="2" stroke="#f9b621" stroke-width="2.5" fill="none"/>
+                            <path d="M50,95 L54,102 L69,102 L73,95" stroke="#f9b621" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+                            <!-- Rayo central -->
+                            <polygon points="67,30 55,56 65,56 53,80 72,50 62,50 74,30" fill="#f9b621"/>
+                        </svg>
+                        <div class="logo-text">
+                            CGP
+                            <span>ELECTRICIDAD</span>
+                        </div>
+                    </div>
+                    <p>Carlos García, tu electricista de confianza. Especialistas en reparaciones del hogar, montajes eléctricos y redes de telecomunicaciones. Soluciones seguras y duraderas.</p>
+                </div>
+
+                <div class="footer-links-col">
+                    <h3 class="footer-title">Nuestros Servicios</h3>
+                    <ul class="footer-links">
+                        <li><i class="fa-solid fa-chevron-right"></i> Instalaciones Eléctricas</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Redes y Telecomunicaciones</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Diagnóstico de Averías</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Actualización de Cuadros</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Iluminación Interior/Exterior</li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact-col">
+                    <h3 class="footer-title">Datos de Contacto</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fa-solid fa-id-badge"></i>
+                            <div>
+                                <strong>Titular</strong><br>
+                                Carlos García
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <div>
+                                <strong>Teléfono de asistencia</strong><br>
+                                <a href="tel:+34675440505" style="color: var(--color-white); font-weight: 600;">675 440 505</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <div>
+                                <strong>Servicio a domicilio</strong><br>
+                                Desplazamiento ágil para urgencias
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 CGP Electricidad. Todos los derechos reservados. | Diseño enfocado en soluciones eléctricas.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <a href="tel:+34675440505" class="floating-action float-phone" aria-label="Llamar por teléfono">
+        <i class="fa-solid fa-phone"></i>
+    </a>
+    <a href="https://wa.me/34675440505" target="_blank" rel="noopener" class="floating-action float-wa" aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
